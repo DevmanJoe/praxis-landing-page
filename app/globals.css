@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white font-sans text-slate-900 antialiased;
+}
+
+::selection {
+  @apply bg-brand-600 text-white;
+}
+
+@layer utilities {
+  .text-gradient-light {
+    @apply bg-gradient-to-r from-sky-300 via-brand-200 to-sky-300 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-navy {
+    @apply bg-gradient-to-r from-brand-700 via-brand-500 to-brand-700 bg-clip-text text-transparent;
+  }
+
+  .bg-grid-dark {
+    background-image: linear-gradient(
+        to right,
+        rgb(255 255 255 / 0.045) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .bg-grid-light {
+    background-image: linear-gradient(
+        to right,
+        rgb(16 31 60 / 0.06) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgb(16 31 60 / 0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .mask-radial-fade {
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 75%);
+  }
+
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+    mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  }
+}
